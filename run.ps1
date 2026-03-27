@@ -23,7 +23,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
 
 # Install dependencies
 Write-Output "正在安装依赖项..."
-npm install > $null 2>&1
+npm install
 if ($LASTEXITCODE -ne 0) {
   Write-Output "安装依赖项失败。正在退出..."
   Pause
@@ -32,7 +32,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # Install Playwright dependency
 Write-Output "正在安装 Playwright 依赖项..."
-npm install playwright > $null 2>&1
+npm install playwright
 if ($LASTEXITCODE -ne 0) {
   Write-Output "安装 Playwright 依赖项失败。正在退出..."
   Pause
@@ -51,11 +51,11 @@ if ($LASTEXITCODE -ne 0) {
 
 # List of lottery urls and their corresponding names and dates
 $lotteryUrls = @(
-  @{ Name = "オフィシャルWEB抽選先行（一次受付）"; Url = "http://pia.jp/v/magicalmirai25-1/"; Date = "2025年3月14日(金) 12:00 ～ 3月31日(月) 23:59"; Type = "domestic" },
-  @{ Name = "オフィシャルWEB抽選先行（二次受付）"; Url = "http://pia.jp/v/magicalmirai25-2/"; Date = "2025年4月18日(金) 12:00 ～ 5月12日(月) 23:59" ; Type = "domestic" },
-  @{ Name = "チケットぴあ 特別先行"; Url = "http://pia.jp/piajp/v/magicalmirai25-p2/"; Date = "2025年05月16日(金) 昼12:00 ～ 2025年06月02日(月) 23:59" ; Type = "domestic" },
-  @{ Name = "Advance lottery reservation from website"; Url = "http://pia.jp/v/magicalmirai25-1en/"; Date = "April 18th (Fri.) 2025, 12:00 JST - May 12th (Mon.) 2025, 23:59 JST" ; Type = "overseas" },
-  @{ Name = "Advance lottery reservation from website"; Url = "http://pia.jp/v/magicalmirai25-2en/"; Date = "May 16th (Fri.) 2025, 12:00 JST - June 2nd (Mon.) 2025, 23:59 JST"; Type = "overseas" }
+  @{ Name = "オフィシャルWEB抽選先行（一次受付）"; Url = "http://pia.jp/v/magicalmirai26-1/"; Date = "2026年3月13日(金) 12:00 ～ 4月1日(水) 23:59"; Type = "domestic" },
+  @{ Name = "オフィシャルWEB抽選先行（二次受付）"; Url = "http://pia.jp/v/magicalmirai26-2/"; Date = "2026年4月10日(金) 12:00 ～ 5月6日(水) 23:59" ; Type = "domestic" },
+  @{ Name = "チケットぴあ 特別先行"; Url = "http://pia.jp/piajp/v/magicalmirai26-p2/"; Date = "2025年05月16日(金) 昼12:00 ～ 2025年06月02日(月) 23:59" ; Type = "domestic" },
+  @{ Name = "Advance lottery reservation from website"; Url = "http://pia.jp/v/magicalmirai26en-1/"; Date = "April 10th (Fri.), 2026, 12:00 JST - May 6th (Wed.), 2026, 23:59 JST" ; Type = "overseas" },
+  @{ Name = "Advance lottery reservation from website"; Url = "http://pia.jp/v/magicalmirai26en-2/"; Date = "May 15th (Fri.), 2026, 12:00 JST - June 3rd (Wed.), 2026, 23:59 JST"; Type = "overseas" }
 )
 
 Write-Output "==============================="
