@@ -71,18 +71,10 @@ const completeDomesticLottery = async (page, lottery, link, dryRun = false) => {
 
   const [first_three, middle_four, last_four] = splitPhoneNumber(lottery.phone);
   console.log("电话号码: ", lottery.phone, first_three, middle_four, last_four);
-  await page.fill(
-    "dl.vertical_table:nth-child(6) > dd:nth-child(2) > p:nth-child(3) > input:nth-child(1)",
-    first_three
-  );
-  await page.fill(
-    "dl.vertical_table:nth-child(6) > dd:nth-child(2) > p:nth-child(3) > input:nth-child(2)",
-    middle_four
-  );
-  await page.fill(
-    "dl.vertical_table:nth-child(6) > dd:nth-child(2) > p:nth-child(3) > input:nth-child(3)",
-    last_four
-  );
+
+  await page.fill("input[name='telno1']", first_three);
+  await page.fill("input[name='telno2']", middle_four);
+  await page.fill("input[name='telno3']", last_four);
 
   await page.fill(
     "dl.vertical_table:nth-child(7) > dd:nth-child(2) > p:nth-child(3) > input:nth-child(1)",
